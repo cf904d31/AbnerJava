@@ -3,7 +3,7 @@ package tw.org.iii.AbnerJava;
 public class Poker {
 	
 	
-	/*
+	/*   //第一版洗牌系統
 	public static void main(String[] args) {
 		// 洗牌
 		int[] poker = new int[10];
@@ -33,7 +33,7 @@ public class Poker {
 		// TODO Auto-generated method stub
 		int [] porkCard = new int[52];
 		long start = System.currentTimeMillis();
-		//---------洗牌------------
+		//---------第二版洗牌系統------------
 		for (int i=0 ; i<porkCard.length ; i++) {
 			int temp;
 			//------檢查是否重複----------  
