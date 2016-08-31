@@ -53,6 +53,26 @@ public class Poker {
 			System.out.print(temp+"  ");
 		}
 		
+		
+		//--------------第三版洗牌程式---------
+		System.out.println();
+		for (int i=0 ; i<porkCard.length ; i++) {
+			int temp = i ;
+			porkCard[i] = temp; 
+			System.out.print(porkCard[i]+" ");
+		}
+		
+		for (int i=porkCard.length-1 ; i>0 ; i--) {
+			int arrayNumber = (int)(Math.random()*i);
+			int temp = porkCard[arrayNumber];
+			porkCard[arrayNumber] = porkCard[i];
+			porkCard[i] = temp;
+		}
+		System.out.println();
+		for (int i=0 ; i<porkCard.length ; i++) {
+			System.out.print(porkCard[i]+" ");
+		}
+		
 		//---------計算程式執行時間
 		long stop = System.currentTimeMillis();
 		System.out.print("Time=");
