@@ -1,0 +1,2 @@
+INDEX VERSION 1.129+D:\AbnerJava\.metadata\.plugins\org.eclipse.jdt.core
+2335895113.index
