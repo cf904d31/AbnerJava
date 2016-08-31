@@ -1,5 +1,7 @@
 package tw.org.iii.AbnerJava;
 
+import java.util.Arrays;
+
 public class Poker {
 	
 	
@@ -50,10 +52,10 @@ public class Poker {
 				}
 			} while (isRepeat);
 			porkCard[i] = temp;
-			System.out.print(temp+"  ");
+			System.out.print(temp+" ");
 		}
 		
-		
+		/*
 		//--------------第三版洗牌程式---------
 		System.out.println();
 		for (int i=0 ; i<porkCard.length ; i++) {
@@ -72,6 +74,7 @@ public class Poker {
 		for (int i=0 ; i<porkCard.length ; i++) {
 			System.out.print(porkCard[i]+" ");
 		}
+		*/
 		
 		//---------計算程式執行時間
 		long stop = System.currentTimeMillis();
@@ -83,11 +86,27 @@ public class Poker {
 		for (int i=0 ; i<porkCard.length ; i++) {
 			player[i%4][i/4] = porkCard[i];
 		}
+		//---------攤牌-------------
+		/*
 		for (int v[] : player) {
 			System.out.println("玩家-----");
 			for (int vv : v) {
-				System.out.println(vv);
+				System.out.print(vv+" ");
 			}
+			System.out.println();
+		}
+		*/
+		//--------換成花色及13張牌----
+		String [] flowerColor = {"黑桃","紅心","方塊","梅花"};
+		String [] cardNumber  = {"A ","2 ","3 ","4 ","5 ","6 ","7 ","8 ","9 ","10","J ","Q ","K "};
+		for (int v[] : player) {
+			System.out.println("玩家-----");
+			//-------利用api   Arrays.sort  來排序-----------
+			Arrays.sort(v);
+			for (int vv : v) {
+				System.out.print(flowerColor[vv/13]+cardNumber[vv%13]+"("+vv+") ");
+			}
+			System.out.println();
 		}
 		
 	}
