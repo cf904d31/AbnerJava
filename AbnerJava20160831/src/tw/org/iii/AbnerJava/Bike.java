@@ -29,4 +29,11 @@ public class Bike {
 	double getSpeed() {
 		return speed;
 	}
+	
+	//------加上toString方法
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Hello Yang";
+	}
 }
