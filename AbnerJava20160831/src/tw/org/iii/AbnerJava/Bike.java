@@ -2,6 +2,15 @@ package tw.org.iii.AbnerJava;
 
 public class Bike {
 	private double speed;
+	private int color;
+	
+	//-----建構式(不能有傳回值所以不能加上void若加上去，會變成一般的方法)------------
+	//-----通常建構式用於初始化這個類別------------
+	Bike() {
+		System.out.println("Bike()");
+		color = 2;
+	}
+	
 	void upSpeed() {
 		speed = (speed<1?speed=1:speed*1.2);
 	}
