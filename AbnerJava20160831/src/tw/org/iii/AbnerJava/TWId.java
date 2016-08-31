@@ -18,8 +18,11 @@ public class TWId {
 		this(gender , (int)(Math.random()*26));
 	}
 	public TWId(boolean gender, int area) {
+		//------選擇地區------
 		String temp = check.substring(area, area+1);
+		//------選擇男女------
 		temp += (gender?"1":"2");
+		//------亂數產生7個0~9的號碼-----
 		temp += (int)(Math.random()*10);
 		temp += (int)(Math.random()*10);
 		temp += (int)(Math.random()*10);
@@ -27,6 +30,7 @@ public class TWId {
 		temp += (int)(Math.random()*10);
 		temp += (int)(Math.random()*10);
 		temp += (int)(Math.random()*10);
+		//------驗證最後一個號碼是否符合身分證驗證規格---------
 		for (int i=0 ; i<10 ; i++) {
 			if ( isRight(temp + i) ) {
 				id = temp+i;
