@@ -8,6 +8,10 @@ public class UseBike {
 		System.out.println(myBike.getSpeed());
 		myBike.upSpeed();
 		System.out.println(myBike.getSpeed());
+		myBike.upSpeed();
+		System.out.println(myBike.getSpeed());
+		myBike.upSpeed(2);
+		System.out.println(myBike.getSpeed());
 	}
 
 }
