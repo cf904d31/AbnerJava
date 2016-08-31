@@ -6,9 +6,14 @@ public class Bike {
 	
 	//-----建構式(不能有傳回值所以不能加上void若加上去，會變成一般的方法)------------
 	//-----通常建構式用於初始化這個類別------------
+	//-----建構式也可同名只要參數跟型別不同
 	Bike() {
 		System.out.println("Bike()");
 		color = 2;
+	}
+	Bike(int c) {
+		System.out.println("Bike(int)");
+		color = c;
 	}
 	
 	void upSpeed() {
