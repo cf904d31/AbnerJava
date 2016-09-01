@@ -18,7 +18,7 @@ public class Third extends JFrame {
 		save = new JButton("Save");
 		exit = new JButton("Exit");
 		
-		
+		//------底下這兩個是JFrame中父類別的父類別Window中的方法
 		setSize(640, 480);
 		setVisible(true);
 	}
