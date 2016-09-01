@@ -32,8 +32,8 @@ public class First {
 		int [] porkCard = new int[n];
 		for (int i=0 ; i<porkCard.length ; i++) {
 			int temp;
-			//------�ˬd�O�_����----------  
-			//------�ϥ�do-while�ӧP�_----
+			//------檢查是否重複----------  
+			//------使用do-while來判斷----
 			boolean isRepeat;
 			do {
 				isRepeat = false;
@@ -48,7 +48,7 @@ public class First {
 			porkCard[i] = temp;
 		}
 		String ret = "";
-		//-----�ϥ�foreach���}�C�����Ʀr�v���[�J�ܼ�ret��
+		//-----使用foreach將陣列中的值放入ret中
 		for (int p : porkCard) {
 			ret += p;
 		}
