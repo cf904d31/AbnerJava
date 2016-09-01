@@ -6,17 +6,17 @@ public class First {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//-------------²q¼Æ¦r1A2B¹CÀ¸-----------
-		//--------1.²£¥Í¥X4­Ó¸¹½Xªº¶Ã¼Æ---------
+		//-------------çŒœæ•¸å­—1A2BéŠæˆ²-----------
+		//--------1.ç”¢ç”Ÿå‡º4å€‹è™Ÿç¢¼çš„äº‚æ•¸---------
 		int n = 5;
 		String answer = createAnswer(n);
 		System.out.println(answer);
-		//--------2.¶}©l¹CÀ¸--------------------
+		//--------2.é–‹å§‹éŠæˆ²--------------------
 		
 		for (int i=0 ; i<10 ; i++) {
-		//--------3.²q¼Æ¦r----------------------
-			String guess = JOptionPane.showInputDialog("½Ğ¿é¤J" + n + "­Ó¼Æ¦r");
-		//--------4.¤ñ¹ï²qªº¼Æ¦r----------------
+			//--------3.çŒœæ•¸å­—----------------------
+			String guess = JOptionPane.showInputDialog("ï¿½Ğ¿ï¿½J" + n + "ï¿½Ó¼Æ¦r");
+			//--------4.æ¯”å°çŒœçš„æ•¸å­—----------------
 			if (guess.equals(answer)) {
 				
 			}
@@ -24,7 +24,7 @@ public class First {
 			JOptionPane.showMessageDialog(null, guess+":" + result);
 		}
 		
-		//--------5.Åã¥Üµ²ªG--------------------
+		//--------5.é¡¯ç¤ºçµæœ--------------------
 	}
 	
 	
@@ -32,8 +32,8 @@ public class First {
 		int [] porkCard = new int[n];
 		for (int i=0 ; i<porkCard.length ; i++) {
 			int temp;
-			//------ÀË¬d¬O§_­«½Æ----------  
-			//------¨Ï¥Îdo-while¨Ó§PÂ_----
+			//------ï¿½Ë¬dï¿½Oï¿½_ï¿½ï¿½ï¿½ï¿½----------  
+			//------ï¿½Ï¥ï¿½do-whileï¿½Ó§Pï¿½_----
 			boolean isRepeat;
 			do {
 				isRepeat = false;
@@ -48,7 +48,7 @@ public class First {
 			porkCard[i] = temp;
 		}
 		String ret = "";
-		//-----¨Ï¥ÎforeachÅı°}¦C¤¤ªº¼Æ¦r³vº¥¥[¤JÅÜ¼Æret¤¤
+		//-----ï¿½Ï¥ï¿½foreachï¿½ï¿½ï¿½}ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½Æ¦rï¿½vï¿½ï¿½ï¿½[ï¿½Jï¿½Ü¼ï¿½retï¿½ï¿½
 		for (int p : porkCard) {
 			ret += p;
 		}
