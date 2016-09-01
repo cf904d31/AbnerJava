@@ -8,24 +8,34 @@ public class First {
 		// TODO Auto-generated method stub
 		//-------------猜數字1A2B遊戲-----------
 		//--------1.產生出4個號碼的亂數---------
-		int n = 5;
+		int n = 4;
 		String answer = createAnswer(n);
 		System.out.println(answer);
 		//--------2.開始遊戲--------------------
-		
-		for (int i=0 ; i<10 ; i++) {
+		boolean isCheck = false;
+		int choice = 10;
+		String showResult = "";
+		for (int i=1 ; i<=10 ; i++) {
 			//--------3.猜數字----------------------
 			String guess = JOptionPane.showInputDialog("請輸入" + n + "個數字");
+			choice --;
 			//--------4.比對猜的數字----------------
-			boolean isCheck = true;
 			if (guess.equals(answer)) {
-				
+				isCheck = true;
+				break;
 			}
 			String result = checkAB(guess , answer);
-			JOptionPane.showMessageDialog(null, guess+":" + result);
+			showResult += ("第" + i + "次猜的結果" + guess + ":" + result + "\n");
+			JOptionPane.showMessageDialog(null, "您還有" + choice + "次機會\n" + showResult);
 		}
 		
 		//--------5.顯示結果--------------------
+		
+		if (isCheck) {
+			JOptionPane.showMessageDialog(null, "恭喜您成功猜對數字");
+		} else {
+			JOptionPane.showMessageDialog(null, "抱歉您在10次內未猜中數字");
+		}
 	}
 	
 	
