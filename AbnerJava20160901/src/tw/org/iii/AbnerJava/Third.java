@@ -7,7 +7,8 @@ import javax.swing.JFrame;
 //----------繼承 javax.swing  中的     JFrame類別
 public class Third extends JFrame {
 	
-	//------宣告擁有JButton這個類別的屬性
+	//------宣告JFrame擁有JButton這個類別的屬性
+	//------基本上JFrame與JButton沒有任何關係
 	private JButton open ,save ,exit;
 	
 	Third() {
