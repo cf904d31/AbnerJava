@@ -17,6 +17,7 @@ public class First {
 			//--------3.猜數字----------------------
 			String guess = JOptionPane.showInputDialog("請輸入" + n + "個數字");
 			//--------4.比對猜的數字----------------
+			boolean isCheck = true;
 			if (guess.equals(answer)) {
 				
 			}
