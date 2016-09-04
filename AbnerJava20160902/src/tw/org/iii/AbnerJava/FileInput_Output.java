@@ -3,8 +3,10 @@ package tw.org.iii.AbnerJava;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FilterInputStream;
 import java.io.IOException;
+import java.io.Reader;
 
 public class FileInput_Output {
 
@@ -16,8 +18,8 @@ public class FileInput_Output {
 			System.out.println("檔案存在");
 		}
 		
-		
-		//----讀取檔案-----
+		/*
+		//----讀取檔案(使用FileInputStream())-----
 		
 		try {
 			FileInputStream fis = new FileInputStream(file1);
@@ -54,6 +56,25 @@ public class FileInput_Output {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		*/
+		
+		
+		//----讀取檔案(使用FileReader())-----
+		
+		try {
+			FileReader fileReader = new FileReader(file1);
+			char []buf = new char[10];
+			fileReader.read(buf);
+			System.out.print(new String(buf));
+			fileReader.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
+
