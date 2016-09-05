@@ -63,7 +63,7 @@ public class FileInput_Output {
 		
 		try {
 			FileReader fileReader = new FileReader(file1);
-			char []buf = new char[10];
+			char []buf = new char[38];
 			fileReader.read(buf);
 			System.out.print(new String(buf));
 			fileReader.close();
