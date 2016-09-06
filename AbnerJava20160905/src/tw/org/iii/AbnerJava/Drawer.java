@@ -6,13 +6,11 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.HashMap;
 import java.util.LinkedList;
 
 import javax.swing.JPanel;
 
-import com.sun.xml.internal.ws.wsdl.writer.document.http.Address;
 
 public class Drawer extends JPanel{
 	//-----<泛型>  意即  指定型別給它  讓他在編譯時就可以檢查到，不用到RunTime時再檢查
@@ -29,12 +27,12 @@ public class Drawer extends JPanel{
 	@Override
 	public void paintComponent(Graphics g) {
 		// TODO Auto-generated method stub
-		super.paintComponents(g);
-		System.out.println("B");
+		super.paintComponent(g);
+		//System.out.println("B");
 		
 		
 		//-----使用Graphics2D 這是 Graphics 的第二代 功能較多
-		Graphics2D g2d = (Graphics2D)g;
+		Graphics2D g2d = (Graphics2D) g;
 		g2d.setColor(Color.BLUE);
 		g2d.setStroke(new BasicStroke(4));
 		//g2d.drawLine(0, 0, 100, 100);
@@ -52,16 +50,21 @@ public class Drawer extends JPanel{
 		}
 	}
 	
+	void clear() {
+		lines.clear();
+		repaint();
+	}
+	
 	private class MyListener extends MouseAdapter {
 
 		@Override
-		public void mouseDragged(MouseEvent arg0) {
+		public void mouseDragged(MouseEvent e) {
 			// TODO Auto-generated method stub
-			super.mouseDragged(arg0);
-			int x = arg0.getX();
-			int y = arg0.getY();
+			super.mouseDragged(e);
+			int x = e.getX();
+			int y = e.getY();
 			//System.out.println("Dragged:(X=" + x + ",Y=" + y + ")");
-			HashMap<String,Integer> point = new HashMap();
+			HashMap<String,Integer> point = new HashMap<>();
 			point.put("x", x);
 			point.put("y", y);
 			lines.getLast().add(point);
@@ -71,17 +74,17 @@ public class Drawer extends JPanel{
 		}
 
 		@Override
-		public void mousePressed(MouseEvent arg0) {
+		public void mousePressed(MouseEvent e) {
 			// TODO Auto-generated method stub
-			super.mousePressed(arg0);
-			int x = arg0.getX();
-			int y = arg0.getY();
+			super.mousePressed(e);
+			int x = e.getX();
+			int y = e.getY();
 			//System.out.println("Pressed:(X=" + x + ",Y=" + y + ")");
 			
 			LinkedList<HashMap<String,Integer>> line = new LinkedList<>();
 			
 			//-----new出一個HashMap將x及y的值放進去
-			HashMap<String,Integer> point = new HashMap();
+			HashMap<String,Integer> point = new HashMap<>();
 			point.put("x", x);
 			point.put("y", y);
 			//-----將HashMap的值放入LinkedList中
@@ -89,15 +92,5 @@ public class Drawer extends JPanel{
 			//-----將一條一條的線段放入lines中
 			lines.add(line);
 		}
-
-		@Override
-		public void mouseReleased(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-			super.mouseReleased(arg0);
-			int x = arg0.getX();
-			int y = arg0.getY();
-			//System.out.println("Released:(X=" + x + ",Y=" + y + ")");
-		}
-		
 	}
 }
