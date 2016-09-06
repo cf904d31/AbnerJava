@@ -13,13 +13,17 @@ public class Thread_Practice extends JFrame {
 	private JButton go;
 	private JLabel[] lanes;
 	private int rank;
+	private MyClock clock;
 	
 	public Thread_Practice() {
 		super("Racing");
-		setLayout(new GridLayout(9, 1));
+		setLayout(new GridLayout(10, 1));
 		
 		go = new JButton("Go");
 		add(go);
+		
+		clock = new MyClock();
+		add(clock);
 		
 		lanes = new JLabel[8];
 		for (int i=0 ; i<lanes.length ; i++) {
