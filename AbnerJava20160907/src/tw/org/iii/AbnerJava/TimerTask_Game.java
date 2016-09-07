@@ -38,12 +38,14 @@ public class TimerTask_Game extends JFrame {
 			time = new Timer();
 			time.schedule(new ViewTask(), 0 , 50);
 			balls = new LinkedList<>();
+			Color [] colors = {Color.black,Color.blue,Color.cyan,Color.darkGray,Color.gray,Color.green
+					,Color.orange,Color.pink,Color.yellow};
 			addMouseListener(new MouseAdapter() {
 
 				@Override
 				public void mouseClicked(MouseEvent e) {
 					// TODO Auto-generated method stub
-					balls.add(new Ball(e.getX(),e.getY(),40,40,4,4,Color.blue));
+					balls.add(new Ball(e.getX(),e.getY(),40,40,4,4,colors[(int)(Math.random()*9)]));
 				}
 				
 			});
