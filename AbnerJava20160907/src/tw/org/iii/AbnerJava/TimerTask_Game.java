@@ -4,6 +4,9 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -29,11 +32,22 @@ public class TimerTask_Game extends JFrame {
 	private class MyGame extends JPanel {
 		private Timer time;
 		private Ball myBall;
+		private LinkedList<Ball> balls;
 		
 		MyGame () {
 			time = new Timer();
 			time.schedule(new ViewTask(), 0 , 50);
-			myBall = new Ball(0,0,40,40,4,4,Color.red);
+			balls = new LinkedList<>();
+			addMouseListener(new MouseAdapter() {
+
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					// TODO Auto-generated method stub
+					balls.add(new Ball(e.getX(),e.getY(),40,40,4,4,Color.blue));
+				}
+				
+			});
+			
 		}
 		
 		private class ViewTask extends TimerTask {
@@ -51,8 +65,11 @@ public class TimerTask_Game extends JFrame {
 			super.paintComponent(g);
 			Graphics2D g2d = (Graphics2D)g;
 			viewW = getWidth(); viewH = getHeight();
-			g2d.setColor(myBall.color);
-			g2d.fillOval(myBall.x, myBall.y, myBall.w, myBall.h);
+			for (Ball myBall : balls) {
+				g2d.setColor(myBall.color);
+				g2d.fillOval(myBall.x, myBall.y, myBall.w, myBall.h);
+			}
+			
 			
 		}
 		
