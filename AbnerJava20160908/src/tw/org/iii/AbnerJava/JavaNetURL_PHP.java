@@ -17,7 +17,7 @@ public class JavaNetURL_PHP {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try {
-			URL url = new URL("http://10.1.6.70/addData.php?cname=別鬧我才是真的住ㄍㄜ&tel=8756321&birthday=1992-06-30");
+			URL url = new URL("http://10.1.6.80/addData.php?cname=別鬧我才是真的住ㄍㄜ&tel=8756321&birthday=1992-06-30");
 			HttpURLConnection conn = (HttpURLConnection)url.openConnection();
 			conn.connect();
 			
