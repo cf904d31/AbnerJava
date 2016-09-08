@@ -16,26 +16,24 @@ public class JavaNetURL_PHP {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		for (int i=0 ; i<3 ; i++) {
-			try {
-				URL url = new URL("http://10.1.6.65/addData.php?cname=別鬧我才是真的住ㄍㄜ&tel=8756321&birthday=1992-06-30");
-				HttpURLConnection conn = (HttpURLConnection)url.openConnection();
-				conn.connect();
-				
-				
-				InputStream ins = conn.getInputStream();
-				ins.close();
-				
-				
-				System.out.println("OK");
-				
-			} catch (MalformedURLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		try {
+			URL url = new URL("http://10.1.6.70/addData.php?cname=別鬧我才是真的住ㄍㄜ&tel=8756321&birthday=1992-06-30");
+			HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+			conn.connect();
+			
+			
+			InputStream ins = conn.getInputStream();
+			ins.close();
+			
+			
+			System.out.println("OK");
+			
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
