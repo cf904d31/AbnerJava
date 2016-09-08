@@ -14,7 +14,7 @@ public class JavaNetURL_Queryphp {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		try {
-			URL url = new URL("http://10.1.6.65/query.php");
+			URL url = new URL("http://10.1.6.70/query.php");
 			HttpURLConnection conn = (HttpURLConnection)url.openConnection();
 			conn.connect();
 			
